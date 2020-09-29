@@ -1,4 +1,6 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
+
+import 'sidebar.dart';
 
 void main() => runApp(new Pace());
 
@@ -12,13 +14,17 @@ class PaceState extends State<Pace> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new Scaffold(
       backgroundColor: Colors.black87,
+      appBar: AppBar(
+        title :Text('Home',),
+      ),
+      drawer: Sidebar(),
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
           new Image(
-            image: new AssetImage("assets/Logo.jpg"),
+            image: new AssetImage("assets/logo.jpeg"),
             fit: BoxFit.cover,
-            color: Colors.black87,
+            color: Colors.white70,
             colorBlendMode: BlendMode.darken,
           ),
           new Form(

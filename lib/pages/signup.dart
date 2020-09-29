@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'home.dart';
+
 void main() => runApp(new Homepage());
 
 class Homepage extends StatefulWidget {
@@ -32,7 +34,7 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
         fit: StackFit.expand, //!makes the picture fill the entire screen
         children: <Widget>[
           new Image(
-            image: new AssetImage("assets/Logo.jpg"),
+            image: new AssetImage("assets/logo.jpeg"),
             fit: BoxFit.cover, //!covers the screen
             color: Colors.black87,
             colorBlendMode: BlendMode.darken,
@@ -48,7 +50,7 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                 child: Theme(
                   data: new ThemeData(
                     brightness: Brightness.dark,
-                    primarySwatch: Colors.cyan,
+                    primarySwatch: Colors.blueGrey,
                     inputDecorationTheme: new InputDecorationTheme(
                       labelStyle: new TextStyle(
                           color: Colors.cyanAccent,
@@ -115,7 +117,13 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                           color: Colors.cyan,
                           textColor: Colors.white,
                           child: new Text("Sign Up"),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => Pace(),
+                              ),
+                            );
+                          },
                           splashColor: Colors.tealAccent,
                         ),
                       ],
