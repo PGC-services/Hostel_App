@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
+
+import '../../../main.dart';
 import 'contact.dart';
 import 'profile.dart';
+import 'settings.dart';
 
 class Sidebar extends StatelessWidget {
   @override
@@ -27,19 +29,19 @@ class Sidebar extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: new AssetImage("assets/logo.jpeg"),
+                        image: new AssetImage("assets/My_pic.jpeg"),
                         fit: BoxFit.fill,
                       ),
                     ),
                   ),
-                  Text(
+                  Text(//!This field will be the name of the user in Version 1.0
                     'Pacesetters Hostel',
                     style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
                     ),
                   ),
-                  Text(
+                  Text(//!This field will be the email of the user in Version 1.0
                     'example@dev.com',
                     style: TextStyle(
                       color: Colors.white,
@@ -57,6 +59,7 @@ class Sidebar extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
+            //trailing: ,
             onTap: () {
               Navigator.of(context).pop();
               Navigator.of(context).push(
@@ -67,7 +70,7 @@ class Sidebar extends StatelessWidget {
             },
           ),
           ListTile(
-              leading: Icon(Icons.person),
+              leading: Icon(Icons.phone),
               title: Text(
                 'Contact Us',
                 style: TextStyle(

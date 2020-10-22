@@ -1,6 +1,7 @@
-import 'package:Hostel/pages/home.dart';
+import 'package:Hostel/features/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
-import 'pages/signup.dart';
+
+import 'features/presentation/pages/home.dart';
 
 void main() => runApp(new MyApp());
 
@@ -8,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: Login(),
+      home: Homepage(),
       theme: new ThemeData(
         primarySwatch: Colors.cyan,
       ),
@@ -29,7 +30,7 @@ class LoginState extends State<Login> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     _iconAnimationController = new AnimationController(
-        vsync: this, duration: new Duration(microseconds: 500));
+        vsync: this, duration: new Duration(milliseconds: 1000));
 
     _iconAnimation = new CurvedAnimation(
         parent: _iconAnimationController, curve: Curves.bounceOut);

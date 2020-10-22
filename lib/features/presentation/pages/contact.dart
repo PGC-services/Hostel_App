@@ -13,18 +13,19 @@ class ContactState extends State<Contact> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Colors.black87,
+      backgroundColor: Colors.black45,
       appBar: AppBar(
         title: Text('Contact Us...'),
       ),
       drawer: Sidebar(),
       body: new Stack(
+        fit: StackFit.expand,
         children: <Widget>[
           new Image(
             image: new AssetImage("assets/logo.jpeg"),
             fit: BoxFit.cover,
-            color: Colors.white70,
-            colorBlendMode: BlendMode.clear,
+            color: Colors.black54,
+            colorBlendMode: BlendMode.darken,
           ),
           new Form(
             child: Container(
@@ -36,17 +37,21 @@ class ContactState extends State<Contact> with SingleTickerProviderStateMixin {
                     'Talk to the Hostel Managers and Reps using the contact infomation given below',
                     style: TextStyle(
                       fontSize: 22,
+                      color: Colors.white70,
                     ),
                   ),
                   ListTile(
                     leading: Icon(Icons.call),
                     title: Text(
-                      '',
+                      'Hostel Manager',
                       style: TextStyle(
                         fontSize: 18,
+                        color: Colors.cyan,                      
                       ),
                     ),
-                    onTap: () {},
+                    onTap: () {
+                    
+                    },
                   ),
                 ],
               ),

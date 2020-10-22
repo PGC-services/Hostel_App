@@ -65,6 +65,18 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                       children: <Widget>[
                         new TextFormField(
                           decoration: new InputDecoration(
+                            hintText: "Enter username",
+                            labelText: "Username",
+                            focusColor: Colors.cyanAccent,
+                          ),
+                          keyboardType: TextInputType.emailAddress,
+                          style: TextStyle(
+                            fontFamily: 'Consolas',
+                            color: Colors.blueAccent,
+                          ),
+                        ),
+                        new TextFormField(
+                          decoration: new InputDecoration(
                             hintText: "Enter e-mail",
                             labelText: "Email Address",
                             focusColor: Colors.cyanAccent,
