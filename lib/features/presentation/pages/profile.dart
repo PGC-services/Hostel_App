@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'sidebar.dart';
@@ -13,20 +15,44 @@ class ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-       appBar: AppBar(
+      appBar: AppBar(
         title: Text('Profile'),
       ),
       drawer: Sidebar(),
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new Image(
-            image: new AssetImage("assets/logo.jpeg"),
-            fit: BoxFit.cover,
-            color: Colors.black87,
-            colorBlendMode: BlendMode.darken,
-          ),
-         // new Column()
+          new Form(
+            child: new Container(
+              padding: const EdgeInsets.all(30),
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  new Text(
+                    'EDIT YOUR PROFILE',
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: Colors.cyan,
+                    ),
+                  ),
+                  new Container(
+                    child: ListTile(
+                      leading: Icon(Icons.edit),
+                      title: Text(
+                        'Edit Profile',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.cyanAccent,
+                        ),
+                      ),
+                      onTap: () {},
+                    ),
+                  ),
+                  
+                ],
+              ),
+            ),
+          )
         ],
       ),
     );

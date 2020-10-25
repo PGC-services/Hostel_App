@@ -42,9 +42,15 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
           new Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              // new Image(
+              //   //!will change to Hostel Logo inna bit
+              //   image: new AssetImage("assets/logo.jpeg"),
+              //   fit:BoxFit.cover,
+              //   //size: _iconAnimation.value * 100),
+              // ),
               new FlutterLogo(
-                //!will change to Hostel Logo inna bit
-                size: _iconAnimation.value * 100,
+               // duration: (microseconds: 500),
+                size: _iconAnimation.value * 100
               ),
               new Form(
                 child: Theme(
@@ -75,18 +81,18 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                             color: Colors.blueAccent,
                           ),
                         ),
-                        new TextFormField(
-                          decoration: new InputDecoration(
-                            hintText: "Enter e-mail",
-                            labelText: "Email Address",
-                            focusColor: Colors.cyanAccent,
-                          ),
-                          keyboardType: TextInputType.emailAddress,
-                          style: TextStyle(
-                            fontFamily: 'Consolas',
-                            color: Colors.blueAccent,
-                          ),
-                        ),
+                        // new TextFormField(
+                        //   decoration: new InputDecoration(
+                        //     hintText: "Enter e-mail",
+                        //     labelText: "Email Address",
+                        //     focusColor: Colors.cyanAccent,
+                        //   ),
+                        //   keyboardType: TextInputType.emailAddress,
+                        //   style: TextStyle(
+                        //     fontFamily: 'Consolas',
+                        //     color: Colors.blueAccent,
+                        //   ),
+                        // ),
                         SizedBox(
                           height: 12,
                         ),

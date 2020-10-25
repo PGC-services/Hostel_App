@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'sidebar.dart';
 
@@ -10,6 +11,14 @@ class Contact extends StatefulWidget {
 }
 
 class ContactState extends State<Contact> with SingleTickerProviderStateMixin {
+  void customLaunch(command) async {
+    if (await canLaunch(command)) {
+      await launch(command);
+    } else {
+      print('Could not launch $command');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -21,12 +30,12 @@ class ContactState extends State<Contact> with SingleTickerProviderStateMixin {
       body: new Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new Image(
-            image: new AssetImage("assets/logo.jpeg"),
-            fit: BoxFit.cover,
-            color: Colors.black54,
-            colorBlendMode: BlendMode.darken,
-          ),
+          // new Image(
+          //   image: new AssetImage("assets/logo.jpeg"),
+          //   fit: BoxFit.cover,
+          //   color: Colors.black54,
+          //   colorBlendMode: BlendMode.darken,
+          // ),
           new Form(
             child: Container(
               padding: const EdgeInsets.all(30),
@@ -46,11 +55,24 @@ class ContactState extends State<Contact> with SingleTickerProviderStateMixin {
                       'Hostel Manager',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.cyan,                      
+                        color: Colors.cyan,
                       ),
                     ),
                     onTap: () {
-                    
+                      customLaunch('tel: +233 24 353 6375');
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.call),
+                    title: Text(
+                      'Hostel Representative',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.cyan,
+                      ),
+                    ),
+                    onTap: () {
+                      customLaunch('tel: +233 55 973 9718');
                     },
                   ),
                 ],

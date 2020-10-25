@@ -29,7 +29,7 @@ class Sidebar extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       image: DecorationImage(
-                        image: new AssetImage("assets/My_pic.jpeg"),
+                        image: new AssetImage("assets/logo.jpeg"),
                         fit: BoxFit.fill,
                       ),
                     ),
