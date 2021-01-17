@@ -71,8 +71,8 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                       children: <Widget>[
                         new TextFormField(
                           decoration: new InputDecoration(
-                            hintText: "Enter username",
-                            labelText: "Username",
+                            hintText: "Enter Email",
+                            labelText: "Email",
                             focusColor: Colors.cyanAccent,
                           ),
                           keyboardType: TextInputType.emailAddress,
@@ -81,18 +81,6 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                             color: Colors.blueAccent,
                           ),
                         ),
-                        // new TextFormField(
-                        //   decoration: new InputDecoration(
-                        //     hintText: "Enter e-mail",
-                        //     labelText: "Email Address",
-                        //     focusColor: Colors.cyanAccent,
-                        //   ),
-                        //   keyboardType: TextInputType.emailAddress,
-                        //   style: TextStyle(
-                        //     fontFamily: 'Consolas',
-                        //     color: Colors.blueAccent,
-                        //   ),
-                        // ),
                         SizedBox(
                           height: 12,
                         ),
@@ -128,23 +116,28 @@ class HomeState extends State<Homepage> with SingleTickerProviderStateMixin {
                         SizedBox(
                           height: 15.0,
                         ),
-                        new RaisedButton(
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(25.5),
-                          ),
-                          color: Colors.cyan,
-                          textColor: Colors.white,
-                          child: new Text("Sign Up"),
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Pace(),
+                        
+                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //children: [  
+                            new RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(25.5),
                               ),
-                            );
-                          },
-                          splashColor: Colors.tealAccent,
-                        ),
-                      ],
+                              color: Colors.cyan,
+                              textColor: Colors.white,
+                              child: new Text("Sign Up"),
+                              onPressed: () { //! check for a condition before gaining access) {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Pace(),
+                                  ),
+                                );
+                              },
+                              splashColor: Colors.tealAccent,
+                            ),
+                          ],
+                        
+                      //],
                     ),
                   ),
                 ),

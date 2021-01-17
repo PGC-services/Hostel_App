@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../main.dart';
 import 'contact.dart';
-import 'profile.dart';
+import 'edit_profile.dart';
 import 'settings.dart';
 
 class Sidebar extends StatelessWidget {

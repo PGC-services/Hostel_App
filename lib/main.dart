@@ -30,7 +30,9 @@ class LoginState extends State<Login> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     _iconAnimationController = new AnimationController(
-        vsync: this, duration: new Duration(milliseconds: 1000));
+      vsync: this,
+      duration: new Duration(milliseconds: 1000),
+    );
 
     _iconAnimation = new CurvedAnimation(
         parent: _iconAnimationController, curve: Curves.bounceOut);
@@ -97,25 +99,6 @@ class LoginState extends State<Login> with SingleTickerProviderStateMixin {
                         new Padding(
                           padding: const EdgeInsets.only(top: 25.0),
                         ),
-                        new RaisedButton(
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(25.5),
-                          ),
-                          color: Colors.cyan,
-                          textColor: Colors.white,
-                          child: new Text("Log In"),
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Pace(),
-                              ),
-                            );
-                          },
-                          splashColor: Colors.tealAccent,
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
                         new Text(
                           "Tap SIGN UP to Create an Account, otherwise, SIGN IN!",
                           style: TextStyle(
@@ -123,22 +106,50 @@ class LoginState extends State<Login> with SingleTickerProviderStateMixin {
                             fontSize: 15.0,
                           ),
                         ),
-                        new RaisedButton(
-                          shape: new RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(25.5),
-                          ),
-                          color: Colors.cyan,
-                          textColor: Colors.white,
-                          child: new Text("Sign Up"),
-                          onPressed: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Homepage(),
-                              ),
-                            );
-                          },
-                          splashColor: Colors.tealAccent,
+                        SizedBox(
+                          height: 10,
                         ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            new OutlineButton(
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(25.5),
+                              ),
+                              color: Colors.cyan,
+                              textColor: Colors.white,
+                              child: new Text("Log In"),
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Pace(),
+                                  ),
+                                );
+                              },
+                              splashColor: Colors.tealAccent,
+                            ),
+                            new RaisedButton(
+                              shape: new RoundedRectangleBorder(
+                                borderRadius: new BorderRadius.circular(25.5),
+                              ),
+                              color: Colors.cyan,
+                              textColor: Colors.white,
+                              child: new Text("Sign Up"),
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Homepage(),
+                                  ),
+                                );
+                              },
+                              splashColor: Colors.tealAccent,
+                            ),
+                          ],
+                        ),
+                        // SizedBox(
+                        //   height: 15.0,
+                        // ),
+                        
                       ],
                     ),
                   ),
