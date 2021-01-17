@@ -29,23 +29,16 @@ class _SettingsState extends State<Settings> {
               "Settings Page",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 25,
+                fontSize: 35,
                 fontWeight: FontWeight.w500,
               ),
             ),
             SizedBox(height: 40),
-            Row(
-              children: [
-                Icon(Icons.person, color: Colors.cyan),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "Account",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
-                )
-              ],
-            ),
+            buildAccountOptions(context),
+            Divider(
+              height: 4,
+              thickness: 3,
+            ), //!works like the hr propert in html
           ],
         ),
         // new Image(
@@ -56,5 +49,49 @@ class _SettingsState extends State<Settings> {
         // ),
       ),
     );
+  }
+
+  GestureDetector buildAccountOptions(BuildContext context) {
+    return GestureDetector(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text("Change Password"),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text("Option 1"),
+                        Text("Option 2"),
+                        Text("Option 3"),
+                      ],
+                    ),
+                    actions: [
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text("Close"),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.person, color: Colors.cyan),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  "Account",
+                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
+                )
+              ],
+            ),
+          );
   }
 }
