@@ -34,14 +34,16 @@ class Sidebar extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(//!This field will be the name of the user in Version 1.0
+                  Text(
+                    //!This field will be the name of the user in Version 1.0
                     'Pacesetters Hostel',
                     style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
                     ),
                   ),
-                  Text(//!This field will be the email of the user in Version 1.0
+                  Text(
+                    //!This field will be the email of the user in Version 1.0
                     'example@dev.com',
                     style: TextStyle(
                       color: Colors.white,
@@ -50,24 +52,6 @@ class Sidebar extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text(
-              'Profile',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            //trailing: ,
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Profile(),
-                ),
-              );
-            },
           ),
           ListTile(
               leading: Icon(Icons.phone),
@@ -126,6 +110,26 @@ class Sidebar extends StatelessWidget {
               Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => Settings(),
+                ),
+              );
+            },
+          ),
+          //ListView(
+          //child:
+          ListTile(
+            leading: Icon(Icons.person),
+            title: Text(
+              'Profile',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            //trailing: ,
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Profile(),
                 ),
               );
             },

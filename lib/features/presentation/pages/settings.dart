@@ -28,70 +28,147 @@ class _SettingsState extends State<Settings> {
             new Text(
               "Settings Page",
               style: TextStyle(
-                color: Colors.black,
+                color: Colors.black87,
                 fontSize: 35,
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 40),
-            buildAccountOptions(context),
+            SizedBox(
+              height: 40,
+            ),
+            Row(children: [
+              Icon(
+                Icons.person,
+                color: Colors.cyan,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "Account",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ]),
             Divider(
-              height: 4,
-              thickness: 3,
-            ), //!works like the hr propert in html
+              height: 3,
+              thickness: 2,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            buildAccountOptions(context, "Change Password"),
+            buildAccountOptions(
+                context, "Chat with Us"), //! social media handles
+            buildAccountOptions(context, "Privacy and Security"),
+            // buildAccountOptions(context, ),//!at the right time, more options will be added!
+            // Divider(
+            //   height: 3,
+            //   thickness: 2,
+            // ), //!works like the hr property in html
+            SizedBox(
+              height: 40,
+            ),
+            Row(children: [
+              Icon(
+                Icons.volume_up_outlined,
+                color: Colors.cyan,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "Notifications",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ]),
+            Divider(
+              height: 3,
+              thickness: 2,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            buildNotificationsOptions("News for You", true),
+            buildNotificationsOptions("", true),
+            buildNotificationsOptions("", true),
+            buildNotificationsOptions("", true),
           ],
         ),
-        // new Image(
-        //   image: new AssetImage("assets/logo.jpeg"),
-        //   fit: BoxFit.cover,
-        //   color: Colors.white70,
-        //   colorBlendMode: BlendMode.clear,
-        // ),
       ),
     );
   }
 
-  GestureDetector buildAccountOptions(BuildContext context) {
-    return GestureDetector(
-            onTap: () {
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: Text("Change Password"),
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text("Option 1"),
-                        Text("Option 2"),
-                        Text("Option 3"),
-                      ],
-                    ),
-                    actions: [
-                      FlatButton(
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Text("Close"),
-                      ),
-                    ],
-                  );
-                },
-              );
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.person, color: Colors.cyan),
-                SizedBox(
-                  width: 10,
-                ),
-                Text(
-                  "Account",
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
-                )
-              ],
-            ),
+  Row buildNotificationsOptions(String title, bool isActive) {
+    return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "News from Reps",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ), //gonna be changed very very very soon!!!!!
+              ),
+              Switch(
+                value: true,
+                onChanged: (bool val) {},
+              ),
+            ],
           );
+  }
+
+//method for options
+  GestureDetector buildAccountOptions(BuildContext context, String title) {
+    return GestureDetector(
+      onTap: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text(title),
+              content: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text("Option 1"),
+                  Text("Option 2"),
+                  Text("Option 3"),
+                ],
+              ),
+              actions: [
+                FlatButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: Text("Close"),
+                ),
+              ],
+            );
+          },
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            //Icon(Icons.person, color: Colors.cyan),
+            // SizedBox(
+            //   width: 10,
+            // ),
+            Text(
+              title,
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            ),
+            Icon(Icons.arrow_forward_ios_outlined, color: Colors.cyan),
+          ],
+        ),
+      ),
+    );
   }
 }

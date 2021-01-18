@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "898068615414",
+    "project_id": "pacesetters--hostel",
+    "storage_bucket": "pacesetters--hostel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898068615414:android:101e2ff482ed6ce1401cd7",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898068615414-epirlh306st7tpk4eh99b9n0c7b2oekb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYCWzJ0oUo4lClV76Z5UwUmLu2NhaORAQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898068615414-epirlh306st7tpk4eh99b9n0c7b2oekb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

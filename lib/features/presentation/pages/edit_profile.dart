@@ -171,7 +171,7 @@ class _ProfileState extends State<Profile> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35),
       child: TextField(
-        obscureText: isPasswordTextField ? showPassword : false,
+        obscureText: isPasswordTextField ? showPassword : true,
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField
                 ? IconButton(
