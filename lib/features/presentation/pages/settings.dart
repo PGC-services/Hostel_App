@@ -60,9 +60,11 @@ class _SettingsState extends State<Settings> {
               height: 10,
             ),
             buildAccountOptions(context, "Change Password"),
-            buildAccountOptions(context, "Chat with Us"), //! social media handles
+            buildAccountOptions(
+                context, "Chat with Us"), //! social media handles
             buildAccountOptions(context, "Privacy and Security"),
-            buildAccountOptions(context, "Theme"),//!at the right time, more options will be added!
+            buildAccountOptions(context,
+                "Theme"), //!at the right time, more options will be added!
             // Divider(
             //   height: 3,
             //   thickness: 2,
@@ -70,22 +72,32 @@ class _SettingsState extends State<Settings> {
             SizedBox(
               height: 40,
             ),
-            Row(children: [
-              Icon(
-                Icons.volume_up_outlined,
-                color: Colors.cyan,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text(
-                "Notifications",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ]),
+            Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.volume_up_outlined,
+                    color: Colors.cyan,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Notifications",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 193,
+                  ),
+                  Switch(
+                    value: true,
+                    onChanged: (bool val) {},
+                  ), //!if off, all other notifications are off as well
+                ]),
             Divider(
               height: 3,
               thickness: 2,
@@ -96,7 +108,20 @@ class _SettingsState extends State<Settings> {
             buildNotificationsOptions("News for You", true),
             buildNotificationsOptions("Account Activity", true),
             buildNotificationsOptions("News Around the World", true),
-            buildNotificationsOptions("", false),
+            // buildNotificationsOptions("", false),
+            SizedBox(
+              height: 190,
+            ),
+            Center(
+              child: Text(
+                'Version 1.0.0',
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -105,21 +130,21 @@ class _SettingsState extends State<Settings> {
 
   Row buildNotificationsOptions(String title, bool isActive) {
     return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "News from Reps",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                ), //gonna be changed very very very soon!!!!!
-              ),
-              Switch(
-                value: true,
-                onChanged: (bool val) {},
-              ),
-            ],
-          );
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ), //gonna be changed very very very soon!!!!!
+        ),
+        Switch(
+          value: false,
+          onChanged: (bool val) {},
+        ),
+      ],
+    );
   }
 
 //method for options

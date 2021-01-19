@@ -54,6 +54,24 @@ class Sidebar extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.person),
+            title: Text(
+              'Profile',
+              style: TextStyle(
+                fontSize: 18,
+              ),
+            ),
+            //trailing: ,
+            onTap: () {
+              Navigator.of(context).pop();
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Profile(),
+                ),
+              );
+            },
+          ),
+          ListTile(
               leading: Icon(Icons.phone),
               title: Text(
                 'Contact Us',
@@ -114,26 +132,37 @@ class Sidebar extends StatelessWidget {
               );
             },
           ),
-          //ListView(
-          //child:
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text(
-              'Profile',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            //trailing: ,
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Profile(),
-                ),
-              );
-            },
+          SizedBox(
+            height: 335,
           ),
+          Text(
+            'Version 1.0.0',
+            style: TextStyle(
+              color: Colors.grey,
+              fontSize: 20,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+          // Row(
+          //   children: [
+          //     Positioned(
+          //       bottom: 0,
+          //       right: 0,
+          //       child: Center(
+          //         child: Container(
+          //           Text(
+          //             'Version 1.0.0',
+          //             style: TextStyle(
+          //               color: Colors.grey,
+          //               fontSize: 20,
+          //               fontWeight: FontWeight.normal,
+          //             ),
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ],
+          // ),
         ],
       ),
     );

@@ -38,8 +38,8 @@ class _ProfileState extends State<Profile> {
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (BuildContext context) => Settings()),
-              );//page routing
+                    builder: (BuildContext context) => Settings()),
+              ); //page routing
             },
           ),
         ],
@@ -80,7 +80,7 @@ class _ProfileState extends State<Profile> {
                         ),
                         boxShadow: [
                           BoxShadow(
-                            blurRadius: 12,
+                            blurRadius: 10,
                             spreadRadius: 3.5,
                             color: Colors.cyanAccent.withOpacity(0.5),
                             offset: Offset(0, 15),
@@ -89,7 +89,8 @@ class _ProfileState extends State<Profile> {
                         shape: BoxShape.circle,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: NetworkImage("https://www.bing.com/th?id=OIP.BbztveqQXM-Mp6e7q4XogwHaLB&w=136&h=204&c=8&rs=1&qlt=90&pid=3.1&rm=2"),
+                          image: NetworkImage(
+                              "https://www.bing.com/th?id=OIP.BbztveqQXM-Mp6e7q4XogwHaLB&w=136&h=204&c=8&rs=1&qlt=90&pid=3.1&rm=2"),
                         ),
                       ),
                     ),
@@ -107,10 +108,12 @@ class _ProfileState extends State<Profile> {
                           ),
                           color: Colors.cyan,
                         ),
-                        child: Icon(
+                        child: Icon( 
                           Icons.edit,
                           color: Colors.cyanAccent,
+                          //onPressed: () {},
                         ),
+                        
                       ),
                     ),
                   ],
@@ -171,30 +174,31 @@ class _ProfileState extends State<Profile> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 35),
       child: TextField(
-        obscureText: isPasswordTextField ? showPassword : true,
+        obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(
-            suffixIcon: isPasswordTextField
-                ? IconButton(
-                    onPressed: () {
-                      setState(() {
-                        showPassword = !showPassword;
-                      });
-                    },
-                    icon: Icon(
-                      Icons.remove_red_eye,
-                      color: Colors.cyan,
-                    ),
-                  )
-                : null, //!This makes the icon appear only for the password field
-            contentPadding: EdgeInsets.only(bottom: 3),
-            labelText: labelText,
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            hintText: placeholder,
-            hintStyle: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.cyan,
-            )),
+          suffixIcon: isPasswordTextField
+              ? IconButton(
+                  onPressed: () {
+                    setState(() {
+                      showPassword = !showPassword;
+                    });
+                  },
+                  icon: Icon(
+                    Icons.remove_red_eye,
+                    color: Colors.cyan,
+                  ),
+                )
+              : null, //!This makes the icon appear only for the password field
+          contentPadding: EdgeInsets.only(bottom: 3),
+          labelText: labelText,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
+          hintText: placeholder,
+          hintStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+            color: Colors.cyan,
+          ),
+        ),
       ),
     );
   }
