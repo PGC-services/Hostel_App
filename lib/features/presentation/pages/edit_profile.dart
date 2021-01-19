@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+//import 'package:Hostel/features/presentation/pages/sidebar.dart';
 import 'package:flutter/material.dart';
 
 import 'settings.dart';
@@ -108,12 +108,11 @@ class _ProfileState extends State<Profile> {
                           ),
                           color: Colors.cyan,
                         ),
-                        child: Icon( 
+                        child: Icon(
                           Icons.edit,
                           color: Colors.cyanAccent,
                           //onPressed: () {},
                         ),
-                        
                       ),
                     ),
                   ],
@@ -137,13 +136,71 @@ class _ProfileState extends State<Profile> {
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    onPressed: () {},
-                    child: Text("CANCEL",
-                        style: TextStyle(
-                          fontSize: 14,
-                          letterSpacing: 2.2,
-                          color: Colors.black,
-                        )),
+                    onPressed: () {
+                      // showDialog(
+                      //   context: context,
+                      //   builder: (BuildContext context) {
+                      //     return AlertDialog(
+                      //       title: Text(
+                      //         "WARNING",
+                      //         style: TextStyle(
+                      //           letterSpacing: 2.2,
+                      //         ),
+                      //       ),
+                      //       content: Column(
+                      //         mainAxisSize: MainAxisSize.min,
+                      //         children: [
+                      //           Text(
+                      //             "Are you sure you want to cancel this operation?",
+                      //           ),
+                      //           SizedBox(
+                      //             height: 25,
+                      //           ),
+                      //         ],
+                      //       ),
+                      //       actions: [
+                      //         Row(
+                      //           mainAxisAlignment:
+                      //               MainAxisAlignment.spaceBetween,
+                      //           children: [
+                      //             OutlineButton(
+                      //               padding:
+                      //                   EdgeInsets.symmetric(horizontal: 50),
+                      //               shape: RoundedRectangleBorder(
+                      //                   borderRadius:
+                      //                       BorderRadius.circular(20)),
+                      //               child: Text('NO'),
+                      //               onPressed: () {
+                      //                 Navigator.of(context).pop();
+                      //               },
+                      //             ),
+                      //             RaisedButton(
+                      //               shape: new RoundedRectangleBorder(
+                      //                 borderRadius:
+                      //                     new BorderRadius.circular(25.5),
+                      //               ),
+                      //               color: Colors.cyan,
+                      //               textColor: Colors.white,
+                      //               child: new Text("YES"),
+                      //               onPressed:
+                      //                   () {}, //!SAVE CHANGES TO FIREBASE
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       ],
+                      //     );
+                      //   },
+                      // );
+                      Navigator.of(context).pop();
+                    },
+                    child: Text(
+                      "CANCEL",
+                      style: TextStyle(
+                        fontSize: 14,
+                        letterSpacing: 2.2,
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
                   RaisedButton(
                     onPressed: () {},
@@ -152,12 +209,14 @@ class _ProfileState extends State<Profile> {
                     elevation: 2,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
-                    child: Text("SAVE",
-                        style: TextStyle(
-                          fontSize: 14,
-                          letterSpacing: 2.2,
-                          color: Colors.white,
-                        )),
+                    child: Text(
+                      "SAVE",
+                      style: TextStyle(
+                        fontSize: 14,
+                        letterSpacing: 2.2,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ],
               ),

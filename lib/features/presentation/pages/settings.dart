@@ -1,3 +1,5 @@
+import 'package:Hostel/features/presentation/pages/home.dart';
+//import 'package:Hostel/features/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatefulWidget {
@@ -15,7 +17,12 @@ class _SettingsState extends State<Settings> {
         elevation: 1,
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(); 
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => Pace(),
+              ),
+            );
           },
           icon: Icon(Icons.arrow_back),
           color: Colors.cyan,
@@ -60,11 +67,9 @@ class _SettingsState extends State<Settings> {
               height: 10,
             ),
             buildAccountOptions(context, "Change Password"),
-            buildAccountOptions(
-                context, "Chat with Us"), //! social media handles
+            buildAccountOptions(context, "Chat with Us"), //! social media handles
             buildAccountOptions(context, "Privacy and Security"),
-            buildAccountOptions(context,
-                "Theme"), //!at the right time, more options will be added!
+            buildAccountOptions(context, "Theme"), //!at the right time, more options will be added!
             // Divider(
             //   height: 3,
             //   thickness: 2,

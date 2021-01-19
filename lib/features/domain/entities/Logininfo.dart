@@ -8,5 +8,10 @@ class LoginInfo extends Equatable {
   LoginInfo({
     @required this.uname,
     @required this.pword,
-  }) : super([uname, pword]);
+  });//: super([uname, pword]);
+
+  @override
+  // ignore: todo
+  // TODO: implement props
+  List<Object> get props => [uname, pword];
 }

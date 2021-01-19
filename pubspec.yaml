@@ -9,21 +9,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  equatable: ^0.4.0
+  equatable: ^1.2.5
   dartz: ^0.8.6
   flutter_bloc: ^0.21.0
   get_it: ^2.0.1
   shared_preferences: ^0.5.4+4
-  connectivity: ^0.4.3+7
+  connectivity: ^2.0.2
   http: ^0.12.0+2
-  url_launcher: ^5.7.5
+  url_launcher: ^5.7.10
 
   cupertino_icons: ^0.1.3
-  firebase_auth: ^0.14.0+5
+  firebase_auth: ^0.20.0+1
+  firebase_core_web: ^0.2.1+3
+  firebase_core: ^0.7.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^4.1.0
+  mockito: ^4.1.3
   flutter_launcher_icons: "^0.8.0"
 
 #flutter pub run flutter_launcher_icons:main
