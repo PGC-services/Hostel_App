@@ -60,10 +60,9 @@ class _SettingsState extends State<Settings> {
               height: 10,
             ),
             buildAccountOptions(context, "Change Password"),
-            buildAccountOptions(
-                context, "Chat with Us"), //! social media handles
+            buildAccountOptions(context, "Chat with Us"), //! social media handles
             buildAccountOptions(context, "Privacy and Security"),
-            // buildAccountOptions(context, ),//!at the right time, more options will be added!
+            buildAccountOptions(context, "Theme"),//!at the right time, more options will be added!
             // Divider(
             //   height: 3,
             //   thickness: 2,
@@ -95,9 +94,9 @@ class _SettingsState extends State<Settings> {
               height: 10,
             ),
             buildNotificationsOptions("News for You", true),
-            buildNotificationsOptions("", true),
-            buildNotificationsOptions("", true),
-            buildNotificationsOptions("", true),
+            buildNotificationsOptions("Account Activity", true),
+            buildNotificationsOptions("News Around the World", true),
+            buildNotificationsOptions("", false),
           ],
         ),
       ),
