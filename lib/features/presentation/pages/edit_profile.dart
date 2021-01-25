@@ -208,7 +208,8 @@ class _ProfileState extends State<Profile> {
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     child: Text(
                       "SAVE",
                       style: TextStyle(

@@ -8,6 +8,7 @@ class Settings extends StatefulWidget {
 }
 
 class _SettingsState extends State<Settings> {
+  bool isActive = false;
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -17,7 +18,7 @@ class _SettingsState extends State<Settings> {
         elevation: 1,
         leading: IconButton(
           onPressed: () {
-            Navigator.of(context).pop(); 
+            Navigator.of(context).pop();
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => Pace(),
@@ -78,7 +79,6 @@ class _SettingsState extends State<Settings> {
               height: 40,
             ),
             Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Icon(
@@ -99,8 +99,15 @@ class _SettingsState extends State<Settings> {
                     width: 193,
                   ),
                   Switch(
-                    value: true,
-                    onChanged: (bool val) {},
+                    value: isActive,
+                    onChanged: (value) {
+                      setState(() {
+                        isActive = value;
+                        print(isActive);
+                      });
+                    },
+                    activeTrackColor: Colors.lightBlueAccent,
+                    activeColor: Colors.blue,
                   ), //!if off, all other notifications are off as well
                 ]),
             Divider(
@@ -134,6 +141,7 @@ class _SettingsState extends State<Settings> {
   }
 
   Row buildNotificationsOptions(String title, bool isActive) {
+    bool isActives = false;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -145,8 +153,15 @@ class _SettingsState extends State<Settings> {
           ), //gonna be changed very very very soon!!!!!
         ),
         Switch(
-          value: false,
-          onChanged: (bool val) {},
+          value: isActives,//change to inactive very soon
+          onChanged: (value) {
+            setState(() {
+              isActives = value;
+              print(isActives);
+            });
+          },
+          activeTrackColor: Colors.lightBlueAccent,
+          activeColor: Colors.blue,
         ),
       ],
     );
