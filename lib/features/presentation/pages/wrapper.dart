@@ -1,6 +1,5 @@
 import 'package:Hostel/core/models/user.dart';
 import 'package:Hostel/features/presentation/pages/authentication.dart';
-import 'package:Hostel/features/presentation/pages/home.dart';
 import 'package:Hostel/features/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
