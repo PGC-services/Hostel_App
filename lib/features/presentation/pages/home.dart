@@ -16,6 +16,7 @@ class PaceState extends State<Pace> with SingleTickerProviderStateMixin {
       backgroundColor: Colors.black87,
       appBar: AppBar(
         title :Text('Home',),
+        elevation: 1.5,
       ),
       drawer: Sidebar(),
       body: new Stack(

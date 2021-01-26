@@ -63,7 +63,7 @@ class _SettingsState extends State<Settings> {
             Divider(
               height: 3,
               thickness: 2,
-            ),
+            ), //!works like the hr property in html
             SizedBox(
               height: 10,
             ),
@@ -71,10 +71,6 @@ class _SettingsState extends State<Settings> {
             buildAccountOptions(context, "Chat with Us"), //! social media handles
             buildAccountOptions(context, "Privacy and Security"),
             buildAccountOptions(context, "Theme"), //!at the right time, more options will be added!
-            // Divider(
-            //   height: 3,
-            //   thickness: 2,
-            // ), //!works like the hr property in html
             SizedBox(
               height: 40,
             ),
