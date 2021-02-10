@@ -1,4 +1,4 @@
-import 'package:Hostel/features/presentation/pages/home.dart';
+import 'home.dart';
 //import 'package:Hostel/features/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
 

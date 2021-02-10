@@ -1,14 +1,19 @@
-import 'package:Hostel/core/services/auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/services/auth.dart';
 import 'contact.dart';
 import 'edit_profile.dart';
 import 'settings.dart';
 
 class Sidebar extends StatelessWidget {
   final AuthService _auth = AuthService();
+  // final Function toggleView;
+  // Sidebar({this.toggleView});
+
   @override
   Widget build(BuildContext context) {
+    final String email = '';
+    final String name = "";
     return Drawer(
       // for side navigation
       child: Column(
@@ -59,7 +64,7 @@ class Sidebar extends StatelessWidget {
                   ),
                   Text(
                     //!This field will be the email of the user in Version 1.0
-                    'example@dev.com',
+                    email,
                     style: TextStyle(
                       color: Colors.white,
                     ),
@@ -68,90 +73,99 @@ class Sidebar extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: Icon(Icons.person),
-            title: Text(
-              'Profile',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Profile(),
-                ),
-              );
-            },
-          ),
-          ListTile(
-              leading: Icon(Icons.phone),
-              title: Text(
-                'Contact Us',
-                style: TextStyle(
-                  fontSize: 18,
-                ),
-              ),
-              onTap: () {
-                //!page navigations
-                Navigator.of(context).pop();
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => Contact(), //Login(),
+          // ScrollView(
+          ListView(children: [
+            Column(
+              children: [
+                ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text(
+                    'Profile',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
                   ),
-                );
-              }),
-          ListTile(
-            leading: Icon(Icons.arrow_back),
-            title: Text(
-              'Logout',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            onTap: () async {
-              await _auth.logout();
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.question_answer),
-            title: Text(
-              "FAQs",
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            onTap: () {},
-          ),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text(
-              'Settings',
-              style: TextStyle(
-                fontSize: 18,
-              ),
-            ),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Settings(),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Profile(),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-          ),
-          SizedBox(
-            height: 335,
-          ),
-          Text(
-            'Version 1.0.0',
-            style: TextStyle(
-              color: Colors.grey,
-              fontSize: 20,
-              fontWeight: FontWeight.normal,
+                ListTile(
+                    leading: Icon(Icons.phone),
+                    title: Text(
+                      'Contact Us',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                    onTap: () {
+                      //!page navigations
+                      Navigator.of(context).pop();
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Contact(), //Login(),
+                        ),
+                      );
+                    }),
+                ListTile(
+                  leading: Icon(Icons.arrow_back),
+                  title: Text(
+                    'Logout',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  onTap: () async {
+                    await _auth.logout();
+                    // this.toggleView();
+                  },
+                ),
+                ListTile(
+                  leading: Icon(Icons.question_answer),
+                  title: Text(
+                    "FAQs",
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text(
+                    'Settings',
+                    style: TextStyle(
+                      fontSize: 18,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Settings(),
+                      ),
+                    );
+                  },
+                ),
+                SizedBox(
+                  height: 310,
+                ),
+                Text(
+                  'Version 1.0.0',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+              ],
             ),
-          ),
+          ]),
+          //),
           // Row(
           //   children: [
           //     Positioned(

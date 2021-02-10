@@ -1,8 +1,9 @@
-import 'package:Hostel/core/models/user.dart';
-import 'package:Hostel/features/presentation/pages/authentication.dart';
-import 'package:Hostel/features/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../../core/models/user.dart';
+import 'authenticate.dart';
+import 'home.dart';
 
 class Wrapper extends StatelessWidget {
   @override
@@ -11,11 +12,11 @@ class Wrapper extends StatelessWidget {
     //print(person);
 
     // return either Home or Authenticate widget
-    // return Authenticate();
     if (person == null) {
-      return Authenticate();
+      return Authenticate(); //! when there's no user credentials
     } else {
-      return Homepage();
+      print(person);
+      return Pace(); //! when the user has registered
     }
   }
 }

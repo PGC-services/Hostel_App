@@ -60,7 +60,7 @@ class _ProfileState extends State<Profile> {
               Text(
                 'Edit Profile',
                 style: TextStyle(
-                  fontSize: 25, //!A bigger font size makes it more attractive
+                  fontSize: 35, //!A bigger font size makes it more attractive
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -137,60 +137,7 @@ class _ProfileState extends State<Profile> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     onPressed: () {
-                      // showDialog(
-                      //   context: context,
-                      //   builder: (BuildContext context) {
-                      //     return AlertDialog(
-                      //       title: Text(
-                      //         "WARNING",
-                      //         style: TextStyle(
-                      //           letterSpacing: 2.2,
-                      //         ),
-                      //       ),
-                      //       content: Column(
-                      //         mainAxisSize: MainAxisSize.min,
-                      //         children: [
-                      //           Text(
-                      //             "Are you sure you want to cancel this operation?",
-                      //           ),
-                      //           SizedBox(
-                      //             height: 25,
-                      //           ),
-                      //         ],
-                      //       ),
-                      //       actions: [
-                      //         Row(
-                      //           mainAxisAlignment:
-                      //               MainAxisAlignment.spaceBetween,
-                      //           children: [
-                      //             OutlineButton(
-                      //               padding:
-                      //                   EdgeInsets.symmetric(horizontal: 50),
-                      //               shape: RoundedRectangleBorder(
-                      //                   borderRadius:
-                      //                       BorderRadius.circular(20)),
-                      //               child: Text('NO'),
-                      //               onPressed: () {
-                      //                 Navigator.of(context).pop();
-                      //               },
-                      //             ),
-                      //             RaisedButton(
-                      //               shape: new RoundedRectangleBorder(
-                      //                 borderRadius:
-                      //                     new BorderRadius.circular(25.5),
-                      //               ),
-                      //               color: Colors.cyan,
-                      //               textColor: Colors.white,
-                      //               child: new Text("YES"),
-                      //               onPressed:
-                      //                   () {}, //!SAVE CHANGES TO FIREBASE
-                      //             ),
-                      //           ],
-                      //         ),
-                      //       ],
-                      //     );
-                      //   },
-                      // );
+                      // 
                       Navigator.of(context).pop();
                     },
                     child: Text(
@@ -232,7 +179,7 @@ class _ProfileState extends State<Profile> {
   Widget buildTextField(
       String labelText, String placeholder, bool isPasswordTextField) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 35),
+      padding: const EdgeInsets.only(top: 25, left: 35, right: 35, bottom: 10),
       child: TextField(
         obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(

@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
 
 import 'sidebar.dart';
-
-void main() => runApp(new Pace());
+import 'sign-in.dart';
 
 class Pace extends StatefulWidget {
   @override
-  State createState() => PaceState();
+  _PaceState createState() => _PaceState();
 }
+
 //! must contain a sidebar for side navigations.
-class PaceState extends State<Pace> with SingleTickerProviderStateMixin {
+class _PaceState extends State<Pace> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       backgroundColor: Colors.black87,
       appBar: AppBar(
-        title :Text('Home',),
+        title: Text('Home'),
         elevation: 1.5,
+        actions: <Widget>[
+          FlatButton.icon(
+            icon: Icon(Icons.person),
+            label: Text("Logout"),
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Login(),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       drawer: Sidebar(),
       body: new Stack(
@@ -33,9 +46,7 @@ class PaceState extends State<Pace> with SingleTickerProviderStateMixin {
               padding: const EdgeInsets.all(30.0),
               child: new Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  
-                ],
+                children: <Widget>[],
               ),
             ),
           ),
