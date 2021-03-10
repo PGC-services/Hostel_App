@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/models/user.dart';
-import 'authenticate.dart';
-import 'home.dart';
+import '../../src/features/homepage/presentation/pages/home.dart';
+import '../services/authenticate.dart';
+import 'user.dart';
+
 
 class Wrapper extends StatelessWidget {
   @override

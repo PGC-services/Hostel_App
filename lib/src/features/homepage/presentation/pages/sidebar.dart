@@ -1,9 +1,9 @@
+import 'package:Hostel/core/services/auth.dart';
+import 'package:Hostel/src/features/settings/presentation/pages/contact.dart';
+import 'package:Hostel/src/features/settings/presentation/pages/edit_profile.dart';
+import 'package:Hostel/src/features/settings/presentation/pages/settings.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/services/auth.dart';
-import 'contact.dart';
-import 'edit_profile.dart';
-import 'settings.dart';
 
 class Sidebar extends StatelessWidget {
   final AuthService _auth = AuthService();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../login/presentation/pages/sign-in.dart';
 import 'sidebar.dart';
-import 'sign-in.dart';
 
 class Pace extends StatefulWidget {
   @override

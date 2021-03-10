@@ -1,6 +1,6 @@
-import 'home.dart';
-//import 'package:Hostel/features/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
+
+import '../../../homepage/presentation/pages/home.dart';
 
 class Settings extends StatefulWidget {
   @override

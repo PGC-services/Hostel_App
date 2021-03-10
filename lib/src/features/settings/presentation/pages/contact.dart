@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'sidebar.dart';
+import '../../../homepage/presentation/pages/sidebar.dart';
+
 
 void main() => runApp(new Contact());
 

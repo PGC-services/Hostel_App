@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/services/auth.dart';
-import '../../../core/shared/loading.dart';
-import 'home.dart';
+import '../../../../../core/services/auth.dart';
+import '../../../../../core/shared/loading.dart';
+import '../../../homepage/presentation/pages/home.dart';
+
+
 
 class SignUp extends StatefulWidget {
   final Function toggleView;

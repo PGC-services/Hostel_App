@@ -1,6 +1,5 @@
-//!import 'package:Hostel/features/presentation/pages/home.dart';
-import 'package:Hostel/features/presentation/pages/sign-in.dart';
-import 'package:Hostel/features/presentation/pages/signup.dart';
+import 'package:Hostel/src/features/login/presentation/pages/sign-in.dart';
+import 'package:Hostel/src/features/signup/presentation/pages/signup.dart';
 import 'package:flutter/material.dart';
 
 class Authenticate extends StatefulWidget {
