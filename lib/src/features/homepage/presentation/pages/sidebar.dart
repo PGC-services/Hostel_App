@@ -1,8 +1,9 @@
-import 'package:Hostel/core/services/auth.dart';
-import 'package:Hostel/src/features/settings/presentation/pages/contact.dart';
-import 'package:Hostel/src/features/settings/presentation/pages/edit_profile.dart';
-import 'package:Hostel/src/features/settings/presentation/pages/settings.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/services/auth.dart';
+import '../../../settings/presentation/pages/contact.dart';
+import '../../../settings/presentation/pages/edit_profile.dart';
+import '../../../settings/presentation/pages/settings.dart';
 
 
 class Sidebar extends StatelessWidget {
@@ -13,7 +14,7 @@ class Sidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String email = '';
-    final String name = "";
+    //final String name = "";
     return Drawer(
       // for side navigation
       child: Column(

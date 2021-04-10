@@ -1,10 +1,7 @@
-import 'dart:ui';
-//import 'package:Hostel/features/presentation/pages/sidebar.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/services/database.dart';
 import 'settings.dart';
-
-//void main() => runApp(new Profile());
 
 class Profile extends StatefulWidget {
   @override
@@ -13,13 +10,17 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   bool showPassword = false;
+  String email;
+
+  //final DatabaseService _databaseService = DatabaseService();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text('Profile'),
-        elevation: 1, //!changing from 2 to 1
+        elevation: 1,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -137,7 +138,7 @@ class _ProfileState extends State<Profile> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20)),
                     onPressed: () {
-                      // 
+                      //
                       Navigator.of(context).pop();
                     },
                     child: Text(
@@ -150,7 +151,13 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      // await _databaseService.updateUserData(
+                        // "",
+                        // "$email",
+                        // 233,
+                      // );
+                    },
                     color: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,

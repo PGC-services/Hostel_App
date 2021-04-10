@@ -18,7 +18,7 @@ class _PaceState extends State<Pace> {
         title: Text('Home'),
         elevation: 1.5,
         actions: <Widget>[
-          FlatButton.icon(
+          TextButton.icon(
             icon: Icon(Icons.person),
             label: Text("Logout"),
             onPressed: () {

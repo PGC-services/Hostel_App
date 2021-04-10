@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
               elevation: 0.0,
               title: Text('Log In'),
               actions: <Widget>[
-                FlatButton.icon(
+                TextButton.icon(
                   icon: Icon(Icons.person),
                   label: Text('Sign Up'),
                   onPressed: () {

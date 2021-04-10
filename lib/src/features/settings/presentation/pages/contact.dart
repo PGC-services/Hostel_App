@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../homepage/presentation/pages/sidebar.dart';
 
-
 void main() => runApp(new Contact());
 
 class Contact extends StatefulWidget {
